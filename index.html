@@ -81,12 +81,52 @@
             line-height: 1.6;
             opacity: 0.9;
         }
+
+        .section-divider {
+            margin: 60px 0 40px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .section-divider h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #87ceeb;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-divider p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .kahoot-section {
+            background: linear-gradient(135deg, rgba(70, 20, 220, 0.15), rgba(140, 60, 255, 0.15));
+        }
+
+        .kahoot-section h2 {
+            color: #9d4edd;
+        }
+
+        .games-section {
+            background: linear-gradient(135deg, rgba(20, 100, 220, 0.15), rgba(60, 140, 255, 0.15));
+        }
+
+        .games-section h2 {
+            color: #4a90e2;
+        }
         
         .games-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             padding: 20px 0;
+            margin-bottom: 40px;
         }
         
         .game-card {
@@ -103,6 +143,10 @@
         .game-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 25px 50px rgba(0, 100, 200, 0.3);
+        }
+
+        .kahoot-card:hover {
+            box-shadow: 0 25px 50px rgba(157, 78, 221, 0.4);
         }
         
         .game-preview {
@@ -136,6 +180,10 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
+        .kahoot-card .preview-overlay {
+            background: linear-gradient(45deg, rgba(157, 78, 221, 0.8), rgba(189, 147, 249, 0.6));
+        }
         
         .game-card:hover .preview-overlay {
             opacity: 1;
@@ -155,6 +203,10 @@
             cursor: pointer;
             transition: transform 0.2s ease;
         }
+
+        .kahoot-card .play-button {
+            color: #9d4edd;
+        }
         
         .play-button:hover {
             transform: scale(1.1);
@@ -170,6 +222,10 @@
             font-weight: 700;
             margin-bottom: 10px;
             color: #0066cc;
+        }
+
+        .kahoot-card .game-title {
+            color: #9d4edd;
         }
         
         .game-description {
@@ -193,6 +249,10 @@
             border-radius: 15px;
             font-size: 0.8rem;
             font-weight: 500;
+        }
+
+        .kahoot-tag {
+            background: linear-gradient(135deg, #9d4edd, #bd93f9);
         }
         
         .game-stats {
@@ -252,7 +312,7 @@
                 gap: 20px;
             }
             
-            .intro-section h2 {
+            .intro-section h2, .section-divider h2 {
                 font-size: 1.8rem;
             }
         }
@@ -280,6 +340,12 @@
             <h2>🧪 Aprende Jugando</h2>
             <p>Explora conceptos químicos de manera divertida e interactiva. Cada juego está diseñado para reforzar tus conocimientos mientras te diviertes.</p>
         </section>
+
+        <!-- Sección Juegos -->
+        <div class="section-divider games-section">
+            <h2>🎮 JUEGOS - Diversión Educativa</h2>
+            <p>Disfruta de una variedad de juegos únicos que combinan entretenimiento y aprendizaje</p>
+        </div>
         
         <section class="games-grid">
             <a href="https://stgms.github.io/SudokuXD" class="game-card" target="_blank">
@@ -296,27 +362,6 @@
                         <span class="tag">Lógica</span>
                         <span class="tag">Memoria</span>
                         <span class="tag">Números</span>
-                    </div>
-                    <div class="game-stats">
-                        <span style="color: #28a745; font-weight: 600;">¡Disponible!</span>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="https://create.kahoot.it/share/genetica-basica/d8c4ef8a-6bcc-4ba8-a104-a7281cc7c9bf" class="game-card" target="_blank">
-                <div class="game-preview">
-                    <img src="https://images-cdn.kahoot.it/c2f3df2e-dec6-4bd7-a5b5-b762914bec36?auto=webp&dpr=1.25&width=350" alt="Genética preview">
-                    <div class="preview-overlay">
-                        <div class="play-button">▶</div>
-                    </div>
-                </div>
-                <div class="game-info">
-                    <h3 class="game-title">🧬 Genética Básica</h3>
-                    <p class="game-description">Explora los fundamentos de la genética con preguntas interactivas y desafiantes en este Kahoot educativo.</p>
-                    <div class="game-tags">
-                        <span class="tag">Genética</span>
-                        <span class="tag">Biología</span>
-                        <span class="tag">Quiz</span>
                     </div>
                     <div class="game-stats">
                         <span style="color: #28a745; font-weight: 600;">¡Disponible!</span>
@@ -386,8 +431,37 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="game-card coming-soon">
+        </section>
+
+        <!-- Sección Kahoot -->
+        <div class="section-divider kahoot-section">
+            <h2>🎯 KAHOOT - Quiz Interactivos</h2>
+            <p>Pon a prueba tus conocimientos con estos emocionantes quiz interactivos de Kahoot</p>
+        </div>
+        
+        <section class="games-grid">
+            <a href="https://create.kahoot.it/share/genetica-basica/d8c4ef8a-6bcc-4ba8-a104-a7281cc7c9bf" class="game-card kahoot-card" target="_blank">
+                <div class="game-preview">
+                    <img src="https://images-cdn.kahoot.it/c2f3df2e-dec6-4bd7-a5b5-b762914bec36?auto=webp&dpr=1.25&width=350" alt="Genética preview">
+                    <div class="preview-overlay">
+                        <div class="play-button">▶</div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">🧬 Genética Básica</h3>
+                    <p class="game-description">Explora los fundamentos de la genética con preguntas interactivas y desafiantes en este Kahoot educativo.</p>
+                    <div class="game-tags">
+                        <span class="tag kahoot-tag">Genética</span>
+                        <span class="tag kahoot-tag">Biología</span>
+                        <span class="tag kahoot-tag">Quiz Kahoot</span>
+                    </div>
+                    <div class="game-stats">
+                        <span style="color: #28a745; font-weight: 600;">¡Disponible!</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="game-card kahoot-card coming-soon">
                 <div class="game-preview">
                     <img src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?w=400&h=200&fit=crop" alt="Quiz química preview">
                     <div class="preview-overlay">
@@ -395,12 +469,33 @@
                     </div>
                 </div>
                 <div class="game-info">
-                    <h3 class="game-title">🏆 Desafío Químico</h3>
-                    <p class="game-description">Pon a prueba todos tus conocimientos de química en este desafiante quiz con diferentes niveles de dificultad.</p>
+                    <h3 class="game-title">⚗️ Química Orgánica</h3>
+                    <p class="game-description">Domina los conceptos de química orgánica con este completo Kahoot sobre compuestos y reacciones.</p>
                     <div class="game-tags">
-                        <span class="tag">Quiz</span>
-                        <span class="tag">Desafío</span>
-                        <span class="tag">Niveles</span>
+                        <span class="tag kahoot-tag">Química Orgánica</span>
+                        <span class="tag kahoot-tag">Compuestos</span>
+                        <span class="tag kahoot-tag">Quiz Kahoot</span>
+                    </div>
+                    <div class="game-stats">
+                        <span style="color: #ffa500; font-weight: 600;">En desarrollo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-card kahoot-card coming-soon">
+                <div class="game-preview">
+                    <img src="https://images.unsplash.com/photo-1554475901-4538ddfbccc2?w=400&h=200&fit=crop" alt="Tabla periódica preview">
+                    <div class="preview-overlay">
+                        <div class="play-button">▶</div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">🧮 Tabla Periódica</h3>
+                    <p class="game-description">Aprende sobre los elementos químicos y sus propiedades en este desafiante Kahoot de la tabla periódica.</p>
+                    <div class="game-tags">
+                        <span class="tag kahoot-tag">Elementos</span>
+                        <span class="tag kahoot-tag">Tabla Periódica</span>
+                        <span class="tag kahoot-tag">Quiz Kahoot</span>
                     </div>
                     <div class="game-stats">
                         <span style="color: #ffa500; font-weight: 600;">En desarrollo</span>
