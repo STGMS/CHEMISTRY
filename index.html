@@ -36,8 +36,38 @@
             border-radius: 20px;
             margin-bottom: 40px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
         }
-        
+
+        /* Header actions (nuevo enlace directo a Kahoot) */
+        .header-actions {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .kahoot-link-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg,#9d4edd,#bd93f9);
+            color: white;
+            padding: 10px 14px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 6px 18px rgba(157,78,221,0.25);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .kahoot-link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(157,78,221,0.35);
+        }
+
         header h1 {
             font-size: 3.5rem;
             font-weight: 700;
@@ -315,6 +345,12 @@
             .intro-section h2, .section-divider h2 {
                 font-size: 1.8rem;
             }
+
+            .header-actions {
+                position: static;
+                margin-top: 12px;
+                justify-content: center;
+            }
         }
         
         @media (max-width: 480px) {
@@ -331,6 +367,10 @@
 </head>
 <body>
     <header>
+        <div class="header-actions">
+            <!-- Enlace directo a Kahoot -->
+            <a href="https://kahoot.com" class="kahoot-link-button" target="_blank" rel="noopener noreferrer" aria-label="Ir a Kahoot">🔗 Ir a Kahoot</a>
+        </div>
         <h1>QUÍMICA INTERACTIVA</h1>
         <p>Descubre el fascinante mundo de la química a través de juegos educativos</p>
     </header>
@@ -503,7 +543,7 @@
         <!-- Sección Kahoot -->
         <div class="section-divider kahoot-section">
             <h2>🎯 KAHOOT - Quiz Interactivos</h2>
-            <p>Pon a prueba tus conocimientos con estos emocionantes quiz interactivos de Kahoot</p>
+            <p>Pon a prueba tus conocimientos con estos emocionantes quiz interactivos de Kahoot — <a href="https://kahoot.com" target="_blank" rel="noopener noreferrer" style="color:inherit; font-weight:700; text-decoration:underline;">Ir a Kahoot</a></p>
         </div>
         
         <section class="games-grid">
